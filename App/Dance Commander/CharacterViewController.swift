@@ -30,8 +30,9 @@ class CharacterViewController: UIViewController {
     }
     
     
-    // User can select male or female body
+    // SELECT MALE OR FEMALE BODY
     @IBAction func didTapMale(_ sender: UIButton) {
+        sender.isSelected = true
         characterContainerView.contentMode = .scaleAspectFit
         characterContainerView.image = #imageLiteral(resourceName: "man icon")
         
@@ -39,32 +40,26 @@ class CharacterViewController: UIViewController {
     
     
     @IBAction func didTapFemale(_ sender: UIButton) {
+        sender.isSelected = true
         characterContainerView.contentMode = .scaleAspectFit
         characterContainerView.image = #imageLiteral(resourceName: "woman icon")
     }
     
-    // User can tap to see component options
+    // COMPONENT SIDEBAR TOUCH INDICATORS
     
     @IBAction func didTapHairButton(_ sender: UIButton) {
         componentImage1.backgroundColor = UIColor.black
-        
         componentImage2.backgroundColor = UIColor.darkGray
-        
         componentImage3.backgroundColor = UIColor.lightGray
     }
     
-        
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTapEyeButton(_ sender: UIButton) {
+        componentImage1.backgroundColor = UIColor.red
+        componentImage2.backgroundColor = UIColor.orange
+        componentImage3.backgroundColor = UIColor.yellow
     }
-    */
+    
+    
+
 
 }
