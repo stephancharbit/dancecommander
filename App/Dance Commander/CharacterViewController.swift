@@ -12,6 +12,11 @@ class CharacterViewController: UIViewController {
     
     @IBOutlet weak var characterContainerView: UIImageView!
     
+    @IBOutlet weak var componentImage1: UIImageView!
+    
+    @IBOutlet weak var componentImage2: UIImageView!
+    
+    @IBOutlet weak var componentImage3: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +30,7 @@ class CharacterViewController: UIViewController {
     }
     
     
-    
+    // User can select male or female body
     @IBAction func didTapMale(_ sender: UIButton) {
         characterContainerView.contentMode = .scaleAspectFit
         characterContainerView.image = #imageLiteral(resourceName: "man icon")
@@ -37,6 +42,19 @@ class CharacterViewController: UIViewController {
         characterContainerView.contentMode = .scaleAspectFit
         characterContainerView.image = #imageLiteral(resourceName: "woman icon")
     }
+    
+    // User can tap to see component options
+    
+    @IBAction func didTapHairButton(_ sender: UIButton) {
+        componentImage1.backgroundColor = UIColor.black
+        
+        componentImage2.backgroundColor = UIColor.darkGray
+        
+        componentImage3.backgroundColor = UIColor.lightGray
+    }
+    
+        
+    
     
 
     /*

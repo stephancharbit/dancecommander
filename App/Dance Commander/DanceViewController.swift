@@ -10,14 +10,15 @@ import UIKit
 
 class DanceViewController: UIViewController {
     
-    @IBOutlet weak var characterContainerView: UIView!
+    @IBOutlet weak var characterContainerView: UIImageView!
+ 
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      
     }
 
     override func didReceiveMemoryWarning() {
