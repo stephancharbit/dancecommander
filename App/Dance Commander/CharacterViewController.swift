@@ -13,15 +13,14 @@ class CharacterViewController: UIViewController {
     @IBOutlet weak var characterContainerView: UIImageView!
     
     @IBOutlet weak var componentImage1: UIImageView!
-    
     @IBOutlet weak var componentImage2: UIImageView!
-    
     @IBOutlet weak var componentImage3: UIImageView!
 
+    
+    
+ // Loading the View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
