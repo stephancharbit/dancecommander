@@ -138,8 +138,8 @@ class DanceViewController: UIViewController {
     
     func jump(bodyPart: UIView){
         //bodyPart.transform = CGAffineTransform.identity
-        UIView.animate(withDuration: (tempo), delay: 0.0, options: [.curveEaseInOut,], animations: {
-            bodyPart.center = CGPoint(x: bodyPart.center.x+00, y: bodyPart.center.y-30)
+        UIView.animate(withDuration: (tempo/2), delay: 0.0, options: [.curveEaseInOut,], animations: {
+            bodyPart.center = CGPoint(x: bodyPart.center.x+00, y: bodyPart.center.y-70)
             //print(self.slider.value)
         }, completion: {finished in
             UIView.animate(withDuration: (self.tempo), delay: 0.0, options: [.curveEaseInOut], animations: {
@@ -151,7 +151,8 @@ class DanceViewController: UIViewController {
     var snap: UISnapBehavior!
     
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
-        let tapPoint: CGPoint = sender.location(in: view)
+        var tapPoint: CGPoint = sender.location(in: view)
+        tapPoint.y = dancer.center.y
         if (snap != nil) {
             animator.removeBehavior(snap)
         }
