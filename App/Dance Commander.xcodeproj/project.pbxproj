@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8AC036EA1DDBC7820002D3EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC036E91DDBC7820002D3EE /* AppDelegate.swift */; };
-		8AC036EC1DDBC7820002D3EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC036EB1DDBC7820002D3EE /* ViewController.swift */; };
 		8AC036EF1DDBC7820002D3EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC036ED1DDBC7820002D3EE /* Main.storyboard */; };
 		8AC036F11DDBC7820002D3EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AC036F01DDBC7820002D3EE /* Assets.xcassets */; };
 		8AC036F41DDBC7820002D3EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC036F21DDBC7820002D3EE /* LaunchScreen.storyboard */; };
@@ -16,6 +15,8 @@
 		8AC0370A1DDBC7820002D3EE /* Dance_CommanderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC037091DDBC7820002D3EE /* Dance_CommanderUITests.swift */; };
 		8AC037181DDBCD090002D3EE /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC037171DDBCD090002D3EE /* CharacterViewController.swift */; };
 		8AC0371A1DDBCD360002D3EE /* DanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC037191DDBCD360002D3EE /* DanceViewController.swift */; };
+		FFFED1A51DF1253900A56410 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFED1A31DF1253900A56410 /* BaseTransition.swift */; };
+		FFFED1A81DF1263700A56410 /* DiscoTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFED1A71DF1263700A56410 /* DiscoTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 /* Begin PBXFileReference section */
 		8AC036E61DDBC7820002D3EE /* Dance Commander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Commander.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC036E91DDBC7820002D3EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8AC036EB1DDBC7820002D3EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8AC036EE1DDBC7820002D3EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8AC036F01DDBC7820002D3EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AC036F31DDBC7820002D3EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		8AC0370B1DDBC7820002D3EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AC037171DDBCD090002D3EE /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		8AC037191DDBCD360002D3EE /* DanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanceViewController.swift; sourceTree = "<group>"; };
+		FFFED1A31DF1253900A56410 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
+		FFFED1A71DF1263700A56410 /* DiscoTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoTransition.swift; path = ../DiscoTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,9 @@
 		8AC036E81DDBC7820002D3EE /* Dance Commander */ = {
 			isa = PBXGroup;
 			children = (
+				FFFED1A31DF1253900A56410 /* BaseTransition.swift */,
+				FFFED1A71DF1263700A56410 /* DiscoTransition.swift */,
 				8AC036E91DDBC7820002D3EE /* AppDelegate.swift */,
-				8AC036EB1DDBC7820002D3EE /* ViewController.swift */,
 				8AC036ED1DDBC7820002D3EE /* Main.storyboard */,
 				8AC037171DDBCD090002D3EE /* CharacterViewController.swift */,
 				8AC037191DDBCD360002D3EE /* DanceViewController.swift */,
@@ -266,7 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AC037181DDBCD090002D3EE /* CharacterViewController.swift in Sources */,
-				8AC036EC1DDBC7820002D3EE /* ViewController.swift in Sources */,
+				FFFED1A51DF1253900A56410 /* BaseTransition.swift in Sources */,
+				FFFED1A81DF1263700A56410 /* DiscoTransition.swift in Sources */,
 				8AC0371A1DDBCD360002D3EE /* DanceViewController.swift in Sources */,
 				8AC036EA1DDBC7820002D3EE /* AppDelegate.swift in Sources */,
 			);
@@ -511,6 +515,7 @@
 				8AC037101DDBC7820002D3EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8AC037111DDBC7820002D3EE /* Build configuration list for PBXNativeTarget "Dance CommanderTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +524,7 @@
 				8AC037131DDBC7820002D3EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8AC037141DDBC7820002D3EE /* Build configuration list for PBXNativeTarget "Dance CommanderUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +533,7 @@
 				8AC037161DDBC7820002D3EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
