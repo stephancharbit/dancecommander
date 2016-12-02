@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DanceViewController: UIViewController {
+class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var slider: UISlider!
     @IBOutlet var bodyView: UIImageView!
     @IBOutlet var headView: UIImageView!
@@ -17,6 +17,7 @@ class DanceViewController: UIViewController {
     @IBOutlet var dancer: UIView!
     @IBOutlet var upperBodyView: UIView!
     @IBOutlet var legView: UIImageView!
+    @IBOutlet var panGestureRecognizerLegs: UIPanGestureRecognizer!
     
     var tempo = 0.55
     var startingY = 300
@@ -47,6 +48,13 @@ class DanceViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+//////////////////////////////////////////////////////////////////////////////////
+// TEMPO SLIDER //////////////////////////////////////////////////////////////////
     
     @IBAction func didSlide(_ sender: Any) {
         tempo = 1.1-(Double(Float(slider.value)))
@@ -84,12 +92,19 @@ class DanceViewController: UIViewController {
         legView.layer.removeAllAnimations()
     }
     
+//////////////////////////////////////////////////////
+// BUTTON ACTIONS ////////////////////////////////////
+    
     @IBAction func didPressShake(_ sender: Any) {
         shake(bodyPart: theBodyPart)
     }
     
     @IBAction func didPressBounce(_ sender: Any) {
         bounce(bodyPart: theBodyPart)
+    }
+    
+    @IBAction func didPressSpin(_ sender: Any) {
+        spin(bodyPart: dancer)
     }
     
     @IBAction func didPressStop(_ sender: Any) {
@@ -116,6 +131,11 @@ class DanceViewController: UIViewController {
         theBodyPart = legView
     }
     
+    
+    
+//////////////////////////////////////////////////////
+// DANCE MOVES ///////////////////////////////////////
+    
     func shake(bodyPart: UIView){
         bodyPart.transform = CGAffineTransform.identity
         bodyPart.transform = bodyPart.transform.rotated(by: CGFloat(-0.15))
@@ -136,19 +156,44 @@ class DanceViewController: UIViewController {
         })
     }
     
-    func jump(bodyPart: UIView){
+    func spin(bodyPart: UIView){
+          UIView.animate(withDuration: (tempo), delay: 0.0, options: [.curveEaseInOut,], animations: {
+            bodyPart.center = CGPoint(x: bodyPart.center.x+00, y: bodyPart.center.y-200)
+            //print(self.slider.value)
+        }, completion: {finished in
+            UIView.animate(withDuration: (self.tempo/2), delay: 0.0, options: [.curveEaseInOut], animations: {
+                bodyPart.center = CGPoint(x: bodyPart.center.x+00, y: bodyPart.center.y+200)
+            })
+        })
         //bodyPart.transform = CGAffineTransform.identity
+        UIView.animate(withDuration: (tempo), delay: 0.0, options: [.curveEaseIn,], animations: {
+            
+            //      UIView.animate(withDuration: tempo, delay: 0.0, options: [.curveEaseInOut, .autoreverse], animations: {
+            bodyPart.transform =  bodyPart.transform.rotated(by: CGFloat(180 * M_PI / 180))
+        }, completion: {finished in
+//            UIView.animate(withDuration: (self.tempo/2), delay: 0.0, options: [.curveEaseOut,], animations: {
+//                //      UIView.animate(withDuration: tempo, delay: 0.0, options: [.curveEaseInOut, .autoreverse], animations: {
+//                bodyPart.transform =  bodyPart.transform.rotated(by: CGFloat(180 * M_PI / 180))
+//            }, completion: {finished in
+//            })
+        })
+    }
+    
+    func jump(bodyPart: UIView){
         UIView.animate(withDuration: (tempo/2), delay: 0.0, options: [.curveEaseInOut,], animations: {
             bodyPart.center = CGPoint(x: bodyPart.center.x+00, y: bodyPart.center.y-70)
             //print(self.slider.value)
         }, completion: {finished in
-            UIView.animate(withDuration: (self.tempo), delay: 0.0, options: [.curveEaseInOut], animations: {
-                bodyPart.center = CGPoint(x: bodyPart.center.x+00, y: bodyPart.center.y+30)
+            UIView.animate(withDuration: (self.tempo/2), delay: 0.0, options: [.curveEaseInOut], animations: {
+                bodyPart.center = CGPoint(x: bodyPart.center.x+00, y: bodyPart.center.y+70)
             })
         })
     }
     
     var snap: UISnapBehavior!
+
+//////////////////////////////////////////////////////
+// GESTURE RECOGNIZERS ///////////////////////////////
     
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
         var tapPoint: CGPoint = sender.location(in: view)
@@ -159,5 +204,31 @@ class DanceViewController: UIViewController {
         snap = UISnapBehavior(item: dancer, snapTo: tapPoint)
         animator.addBehavior(snap)
     }
+    
+    @IBAction func didPan(_ sender: UIPanGestureRecognizer) {
+        var velocity = sender.velocity(in: view)
+        //print("Velocity: ", velocity)
+        //print(sender)
+        if (velocity.x >= 230){
+            shake(bodyPart: legView)
+            print("SHAKE")
+            //return()
+        }
+        if (velocity.y >= 230) {
+            bounce(bodyPart: legView)
+            print("BOUNCE")
+            //return()
+        }
+        if (velocity.y >= 1200) {
+            jump(bodyPart: legView)
+            print("JUMP")
+            //return()
+        }
+        
+        let translation = sender.translation(in: self.view)
+        //print("Translation: ", translation)
+        
+    }
+   
     
 }
