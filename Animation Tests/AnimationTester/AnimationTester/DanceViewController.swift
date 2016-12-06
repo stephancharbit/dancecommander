@@ -15,9 +15,7 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var startButton: UIButton!
     @IBOutlet var stopButton: UIButton!
     @IBOutlet var dancer: UIView!
-    @IBOutlet var upperBodyView: UIView!
     @IBOutlet var legView: UIImageView!
-    @IBOutlet var panGestureRecognizerLegs: UIPanGestureRecognizer!
     
     var tempo = 0.55
     var startingY = 300
@@ -26,6 +24,7 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
     var attachment: UIAttachmentBehavior!
     var animator: UIDynamicAnimator!
     var theBodyPart:UIView!
+    var dancerStartPoint:CGPoint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +41,7 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
         animator = UIDynamicAnimator(referenceView: view)
         //animator.addBehavior(attachment)
         theBodyPart = bodyView
+        dancerStartPoint = dancer.center
     }
     
     override func didReceiveMemoryWarning() {
@@ -123,10 +123,6 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
         theBodyPart = bodyView
     }
     
-    @IBAction func didPressUpperBody(_ sender: Any) {
-        theBodyPart = upperBodyView
-    }
-    
     @IBAction func didPressLegs(_ sender: Any) {
         theBodyPart = legView
     }
@@ -190,14 +186,15 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
         })
     }
     
-    var snap: UISnapBehavior!
-
+   
 //////////////////////////////////////////////////////
 // GESTURE RECOGNIZERS ///////////////////////////////
-    
+    var snap: UISnapBehavior!
+
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
+        sender.numberOfTapsRequired = 2
         var tapPoint: CGPoint = sender.location(in: view)
-        tapPoint.y = dancer.center.y
+        tapPoint.y = dancerStartPoint.y
         if (snap != nil) {
             animator.removeBehavior(snap)
         }
@@ -206,21 +203,24 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func didPan(_ sender: UIPanGestureRecognizer) {
-        var velocity = sender.velocity(in: view)
+                var velocity = sender.velocity(in: view)
+        
         //print("Velocity: ", velocity)
         //print(sender)
+        if (velocity.y >= 230) {
+            bounce(bodyPart: theBodyPart)
+            print("BOUNCE")
+            print("velocity is", velocity)
+            return()
+        }
         if (velocity.x >= 230){
-            shake(bodyPart: legView)
+            shake(bodyPart: theBodyPart)
             print("SHAKE")
             //return()
         }
-        if (velocity.y >= 230) {
-            bounce(bodyPart: legView)
-            print("BOUNCE")
-            //return()
-        }
+        
         if (velocity.y >= 1200) {
-            jump(bodyPart: legView)
+            jump(bodyPart: theBodyPart)
             print("JUMP")
             //return()
         }
@@ -230,5 +230,31 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
         
     }
    
+    func wasSelected(sender:UIImageView){
+        UIView.animate(withDuration: (0.2), delay: 0.0, options: [.curveEaseOut,  .autoreverse], animations: {
+            sender.transform = sender.transform.scaledBy(x:1.1, y:1.1)
+        }, completion: {finished in
+            sender.transform = sender.transform.scaledBy(x:0.909, y:0.909)
+        })
+    }
+    @IBAction func didTapHead(_ sender: UITapGestureRecognizer) {
+        headView.transform = CGAffineTransform.identity
+        headView.layer.removeAllAnimations()
+        wasSelected(sender: headView)
+        theBodyPart = headView
+    }
+
+    @IBAction func didTapLegs(_ sender: Any) {
+        legView.transform = CGAffineTransform.identity
+        legView.layer.removeAllAnimations()
+        wasSelected(sender: legView)
+        theBodyPart = legView
+    }
+    @IBAction func didTapBody(_ sender: Any) {
+        bodyView.transform = CGAffineTransform.identity
+        bodyView.layer.removeAllAnimations()
+        wasSelected(sender: bodyView)
+        theBodyPart = bodyView
+    }
     
 }
