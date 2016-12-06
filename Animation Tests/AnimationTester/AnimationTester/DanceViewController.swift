@@ -42,6 +42,23 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
         //animator.addBehavior(attachment)
         theBodyPart = bodyView
         dancerStartPoint = dancer.center
+        
+        //Swiping recognizers
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(swipeDown)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+        self.view.addGestureRecognizer(swipeUp)
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,7 +77,7 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
         tempo = 1.1-(Double(Float(slider.value)))
         print("tempo: ",tempo)
         danceStop()
-        danceStart()
+        //danceStart()
     }
     
     func setAnchorPoint(anchorPoint: CGPoint, forView view: UIView) {
@@ -84,12 +101,29 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func danceStop(){
-        bodyView.transform = CGAffineTransform.identity
-        bodyView.layer.removeAllAnimations()
+        headStop()
+        bodyStop()
+        legStop()
+    }
+    
+    func headStop(){
         headView.transform = CGAffineTransform.identity
         headView.layer.removeAllAnimations()
+    }
+    
+    func bodyStop(){
+        bodyView.transform = CGAffineTransform.identity
+        bodyView.layer.removeAllAnimations()
+    }
+    
+    func legStop(){
         legView.transform = CGAffineTransform.identity
         legView.layer.removeAllAnimations()
+    }
+    
+    func anyStop(bodyPart: UIView){
+        bodyPart.transform = CGAffineTransform.identity
+        bodyPart.layer.removeAllAnimations()
     }
     
 //////////////////////////////////////////////////////
@@ -185,10 +219,26 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
             })
         })
     }
-    
    
 //////////////////////////////////////////////////////
 // GESTURE RECOGNIZERS ///////////////////////////////
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                shake(bodyPart: theBodyPart)
+            case UISwipeGestureRecognizerDirection.down:
+                bounce(bodyPart: theBodyPart)
+            case UISwipeGestureRecognizerDirection.left:
+                shake(bodyPart: theBodyPart)
+            case UISwipeGestureRecognizerDirection.up:
+                jump(bodyPart: dancer)
+            default:
+                break
+            }
+        }
+    }
+    
     var snap: UISnapBehavior!
 
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
@@ -202,34 +252,35 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
         animator.addBehavior(snap)
     }
     
-    @IBAction func didPan(_ sender: UIPanGestureRecognizer) {
-                var velocity = sender.velocity(in: view)
-        
-        //print("Velocity: ", velocity)
-        //print(sender)
-        if (velocity.y >= 230) {
-            bounce(bodyPart: theBodyPart)
-            print("BOUNCE")
-            print("velocity is", velocity)
-            return()
-        }
-        if (velocity.x >= 230){
-            shake(bodyPart: theBodyPart)
-            print("SHAKE")
-            //return()
-        }
-        
-        if (velocity.y >= 1200) {
-            jump(bodyPart: theBodyPart)
-            print("JUMP")
-            //return()
-        }
-        
-        let translation = sender.translation(in: self.view)
-        //print("Translation: ", translation)
-        
-    }
-   
+//    @IBAction func didPan(_ sender: UIPanGestureRecognizer) {
+//        var velocity = sender.velocity(in: view)
+//        
+//        //print("Velocity: ", velocity)
+//        //print(sender)
+//        if (velocity.y >= 230) {
+//            bounce(bodyPart: theBodyPart)
+//            print("BOUNCE")
+//            print("velocity is", velocity)
+//        }
+//        if (velocity.x >= 230){
+//            shake(bodyPart: theBodyPart)
+//            print("SHAKE")
+//            //return()
+//        }
+//        
+////        if (velocity.y >= 1200) {
+////            jump(bodyPart: theBodyPart)
+////            print("JUMP")
+////            //return()
+////        }
+//        
+//        let translation = sender.translation(in: self.view)
+//        //print("Translation: ", translation)
+//        
+//    }
+    
+    
+   //Body Part Selectors
     func wasSelected(sender:UIImageView){
         UIView.animate(withDuration: (0.2), delay: 0.0, options: [.curveEaseOut,  .autoreverse], animations: {
             sender.transform = sender.transform.scaledBy(x:1.1, y:1.1)
@@ -251,10 +302,19 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
         theBodyPart = legView
     }
     @IBAction func didTapBody(_ sender: Any) {
+        print("Body")
         bodyView.transform = CGAffineTransform.identity
         bodyView.layer.removeAllAnimations()
         wasSelected(sender: bodyView)
         theBodyPart = bodyView
+    }
+    @IBAction func didRotate(_ sender: UIRotationGestureRecognizer) {
+        print("rotated")
+        spin(bodyPart: dancer)
+        return()
+    }
+    @IBAction func didSwipe(_ sender: UISwipeGestureRecognizer) {
+        
     }
     
 }
