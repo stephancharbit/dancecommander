@@ -1,25 +1,26 @@
 //
-//  DanceViewController.swift
+//  DancefloorViewController.swift
 //  Dance Commander
 //
-//  Created by Stephan Charbit on 11/17/16.
-//  Copyright © 2016 Stephan Charbit. All rights reserved.
+//  Created by KLT on 12/6/16.
+//  Copyright © 2016 Dance Commander. All rights reserved.
 //
 
 import UIKit
 
-class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
+class DancefloorViewController: UIViewController {
     @IBOutlet var slider: UISlider!
     @IBOutlet var bodyView: UIImageView!
     @IBOutlet var headView: UIImageView!
     @IBOutlet var dancer: UIView!
     @IBOutlet var legView: UIImageView!
-
+    
+    
     
     //Images
     var headViewImage: UIImage!
-    
-    
+    var legViewImage: UIImage!
+    var bodyViewImage: UIImage!
     
     var tempo = 0.55
     var startingY = 300
@@ -31,23 +32,22 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
     var dancerStartPoint:CGPoint!
     var isSpinning:Bool!
     
+    @IBOutlet weak var tinyDancer: UIImageView!
     override func viewDidLoad() {
-        headView.image = headViewImage
         super.viewDidLoad()
-        // shake()
         // Do any additional setup after loading the view.
-        print(slider.value)
         startingY = Int(bodyView.center.y)
-        print(startingY)
         startingRotation = 0
-        print ("bv w/2", bodyView.frame.width/2)
-        print ("bv h/2", bodyView.frame.height/2)
-        //setAnchorPoint(anchorPoint: CGPoint(x: (bodyView.frame.width/2), y: (bodyView.frame.height/2)), forView: bodyView)
-        //bodyView.layer.anchorPoint=CGPoint(x: 0.1, y: 0.1)
         animator = UIDynamicAnimator(referenceView: view)
         //animator.addBehavior(attachment)
         theBodyPart = bodyView
         dancerStartPoint = dancer.center
+        
+        //image setup
+        headView.image = headViewImage
+        legView.image = legViewImage
+        bodyView.image = bodyViewImage
+        
         
         //legTapGR.delegate = self
         //legSwipeGR.delegate = self
@@ -79,6 +79,17 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
+    }
+    
+    
+    //SHARE
+    @IBAction func didTapShare(_ sender: Any) {
+    displayShareSheet(shareContent: tinyDancer.image!)
+    }
+    
+    func displayShareSheet(shareContent:UIImage) {
+        let activityViewController = UIActivityViewController(activityItems: [shareContent ], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: {})
     }
     
     //////////////////////////////////////////////////////////////////////////////////

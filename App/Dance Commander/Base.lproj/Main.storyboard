@@ -95,7 +95,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0qy-A9-3a7" kind="show" identifier="showDancefloor" animates="NO" id="6B2-hH-IXN"/>
+                                    <segue destination="IWM-0n-P6I" kind="show" action="showDetailViewController:sender:" id="CG2-22-9xk"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8f6-Af-PHd">
@@ -204,10 +204,10 @@
             </objects>
             <point key="canvasLocation" x="116" y="122.78860569715144"/>
         </scene>
-        <!--Dance View Controller-->
+        <!--View Controller-->
         <scene sceneID="5gQ-rC-v2z">
             <objects>
-                <viewController id="0qy-A9-3a7" customClass="DanceViewController" customModule="Dance_Commander" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0qy-A9-3a7" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nG4-ze-Vsl"/>
                         <viewControllerLayoutGuide type="bottom" id="MaG-35-YAW"/>
@@ -254,12 +254,164 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fj3-Wx-3Ry" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816.79999999999995" y="121.88905547226388"/>
+            <point key="canvasLocation" x="812" y="-585"/>
+        </scene>
+        <!--Dancefloor View Controller-->
+        <scene sceneID="RXl-1h-9no">
+            <objects>
+                <viewController id="IWM-0n-P6I" customClass="DancefloorViewController" customModule="Dance_Commander" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K3V-eG-0VB"/>
+                        <viewControllerLayoutGuide type="bottom" id="gfT-mr-yLx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TsV-bE-uxr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dancer_share" translatesAutoresizingMaskIntoConstraints="NO" id="RhH-oe-bcW">
+                                <rect key="frame" x="192" y="91" width="160" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="dance_floor" translatesAutoresizingMaskIntoConstraints="NO" id="ohC-yi-yAd">
+                                <rect key="frame" x="-62" y="-72" width="482" height="741"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jRp-m1-ayy" appends="YES" id="nxZ-L4-Iba"/>
+                                </connections>
+                            </imageView>
+                            <view alpha="0.60000002384185791" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J0X-vF-Fik">
+                                <rect key="frame" x="0.0" y="557" width="375" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uvd-jh-Mli">
+                                <rect key="frame" x="13" y="591" width="334" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="1" green="0.36053667960000002" blue="0.1275186592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.86482788710000003" green="0.83081532059999996" blue="0.83955462140000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="1" green="0.40016970120000001" blue="0.042761538039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="didSlide:" destination="IWM-0n-P6I" eventType="valueChanged" id="BcQ-a1-u0p"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tempo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lts-sM-iMf">
+                                <rect key="frame" x="15" y="572" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFO-IP-w8F">
+                                <rect key="frame" x="316" y="616" width="43" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stop" image="Stop Red"/>
+                                <state key="highlighted" image="Stop Black"/>
+                                <connections>
+                                    <action selector="didPressStop:" destination="IWM-0n-P6I" eventType="touchUpInside" id="yOT-Ew-51R"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I5D-d1-juc">
+                                <rect key="frame" x="66" y="159" width="229" height="449"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="body_0" translatesAutoresizingMaskIntoConstraints="NO" id="ac4-Wh-xgG" customClass="d">
+                                        <rect key="frame" x="8" y="62" width="232" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="BPx-1u-MeE" appends="YES" id="6e7-Gn-qc2"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="head_0" translatesAutoresizingMaskIntoConstraints="NO" id="7FI-zR-56X">
+                                        <rect key="frame" x="50" y="-73" width="148" height="181"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="hE5-tO-xAe" appends="YES" id="mtr-tp-baI"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="legs_0" translatesAutoresizingMaskIntoConstraints="NO" id="eHA-YR-LOa" customClass="d">
+                                        <rect key="frame" x="20" y="206" width="209" height="183"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="pRL-AS-R9O" appends="YES" id="MEY-IO-NxW"/>
+                                            <outletCollection property="gestureRecognizers" destination="LN8-S4-vjR" appends="YES" id="WbA-46-xuR"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkA-Z7-z5H">
+                                <rect key="frame" x="299" y="0.0" width="76" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="didTapShare:" destination="IWM-0n-P6I" eventType="touchUpInside" id="jdr-6P-moZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ctB-ew-do0" appends="YES" id="vVN-uE-oNG"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="bodyView" destination="ac4-Wh-xgG" id="Dxm-Eu-mIl"/>
+                        <outlet property="dancer" destination="I5D-d1-juc" id="Krz-v7-tqR"/>
+                        <outlet property="headView" destination="7FI-zR-56X" id="rYa-1F-ZoG"/>
+                        <outlet property="legView" destination="eHA-YR-LOa" id="5Rp-kK-ool"/>
+                        <outlet property="slider" destination="Uvd-jh-Mli" id="93b-co-KZE"/>
+                        <outlet property="tinyDancer" destination="RhH-oe-bcW" id="fBE-lz-Ub0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4UX-4p-78d" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jRp-m1-ayy">
+                    <connections>
+                        <action selector="handleTapWithSender:" destination="IWM-0n-P6I" id="fGP-4T-9ml"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="hE5-tO-xAe">
+                    <connections>
+                        <action selector="didTapHead:" destination="IWM-0n-P6I" id="vyR-Z8-EDg"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="pRL-AS-R9O">
+                    <connections>
+                        <action selector="didTapLegs:" destination="IWM-0n-P6I" id="jUl-6t-sA7"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="BPx-1u-MeE">
+                    <connections>
+                        <action selector="didTapBody:" destination="IWM-0n-P6I" id="8Al-Kh-YwH"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <rotationGestureRecognizer id="ctB-ew-do0">
+                    <connections>
+                        <action selector="didRotate:" destination="IWM-0n-P6I" id="cNy-Pl-qbb"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="LN8-S4-vjR">
+                    <connections>
+                        <action selector="didSwipe:" destination="IWM-0n-P6I" id="orv-5s-u0d"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="893.60000000000002" y="122.78860569715144"/>
         </scene>
     </scenes>
     <resources>
         <image name="Back Arrow" width="13" height="21"/>
         <image name="Share Icon" width="22" height="34"/>
+        <image name="Stop Black" width="127" height="127"/>
+        <image name="Stop Red" width="127" height="127"/>
+        <image name="body_0" width="348" height="300"/>
+        <image name="dance_floor" width="369" height="526"/>
+        <image name="dancer_share" width="486" height="766"/>
         <image name="disco1" width="270" height="270"/>
+        <image name="head_0" width="230" height="273"/>
+        <image name="legs_0" width="275" height="319"/>
     </resources>
 </document>

@@ -39,14 +39,15 @@ class CharacterViewController: UIViewController {
 
   // Custom disco transition to the Dance View Controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destinationVC = segue.destination as! DanceViewController
+        var destinationVC = segue.destination as! DancefloorViewController
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.custom
         customTransition = DiscoTransition()
         destinationVC.transitioningDelegate = customTransition
         customTransition.duration = 5.0
         
         destinationVC.headViewImage = self.characterHead.image
-        print(characterHead.image!)
+        destinationVC.bodyViewImage = self.characterBody.image
+        destinationVC.legViewImage = self.characterLegs.image
         
     }
     
@@ -152,6 +153,7 @@ class CharacterViewController: UIViewController {
         }
         
     }
+    
     
     
     

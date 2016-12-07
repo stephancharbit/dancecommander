@@ -14,7 +14,8 @@
 		8AC036FF1DDBC7820002D3EE /* Dance_CommanderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC036FE1DDBC7820002D3EE /* Dance_CommanderTests.swift */; };
 		8AC0370A1DDBC7820002D3EE /* Dance_CommanderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC037091DDBC7820002D3EE /* Dance_CommanderUITests.swift */; };
 		8AC037181DDBCD090002D3EE /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC037171DDBCD090002D3EE /* CharacterViewController.swift */; };
-		8AC0371A1DDBCD360002D3EE /* DanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC037191DDBCD360002D3EE /* DanceViewController.swift */; };
+		FF1A422A1DF7D0F10011FB86 /* DanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A42291DF7D0F10011FB86 /* DanceViewController.swift */; };
+		FF1A422C1DF7D2510011FB86 /* DancefloorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A422B1DF7D2510011FB86 /* DancefloorViewController.swift */; };
 		FFFED1A51DF1253900A56410 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFED1A31DF1253900A56410 /* BaseTransition.swift */; };
 		FFFED1A81DF1263700A56410 /* DiscoTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFED1A71DF1263700A56410 /* DiscoTransition.swift */; };
 /* End PBXBuildFile section */
@@ -50,7 +51,8 @@
 		8AC037091DDBC7820002D3EE /* Dance_CommanderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dance_CommanderUITests.swift; sourceTree = "<group>"; };
 		8AC0370B1DDBC7820002D3EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AC037171DDBCD090002D3EE /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
-		8AC037191DDBCD360002D3EE /* DanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanceViewController.swift; sourceTree = "<group>"; };
+		FF1A42291DF7D0F10011FB86 /* DanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanceViewController.swift; sourceTree = "<group>"; };
+		FF1A422B1DF7D2510011FB86 /* DancefloorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DancefloorViewController.swift; sourceTree = "<group>"; };
 		FFFED1A31DF1253900A56410 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		FFFED1A71DF1263700A56410 /* DiscoTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoTransition.swift; path = ../DiscoTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,12 +105,13 @@
 		8AC036E81DDBC7820002D3EE /* Dance Commander */ = {
 			isa = PBXGroup;
 			children = (
+				FF1A422B1DF7D2510011FB86 /* DancefloorViewController.swift */,
 				FFFED1A31DF1253900A56410 /* BaseTransition.swift */,
 				FFFED1A71DF1263700A56410 /* DiscoTransition.swift */,
 				8AC036E91DDBC7820002D3EE /* AppDelegate.swift */,
 				8AC036ED1DDBC7820002D3EE /* Main.storyboard */,
+				FF1A42291DF7D0F10011FB86 /* DanceViewController.swift */,
 				8AC037171DDBCD090002D3EE /* CharacterViewController.swift */,
-				8AC037191DDBCD360002D3EE /* DanceViewController.swift */,
 				8AC036F01DDBC7820002D3EE /* Assets.xcassets */,
 				8AC036F21DDBC7820002D3EE /* LaunchScreen.storyboard */,
 				8AC036F51DDBC7820002D3EE /* Info.plist */,
@@ -269,9 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AC037181DDBCD090002D3EE /* CharacterViewController.swift in Sources */,
+				FF1A422C1DF7D2510011FB86 /* DancefloorViewController.swift in Sources */,
 				FFFED1A51DF1253900A56410 /* BaseTransition.swift in Sources */,
+				FF1A422A1DF7D0F10011FB86 /* DanceViewController.swift in Sources */,
 				FFFED1A81DF1263700A56410 /* DiscoTransition.swift in Sources */,
-				8AC0371A1DDBCD360002D3EE /* DanceViewController.swift in Sources */,
 				8AC036EA1DDBC7820002D3EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
