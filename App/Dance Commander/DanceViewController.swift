@@ -13,10 +13,14 @@ class DanceViewController: UIViewController {
     @IBOutlet weak var characterContainerView: UIImageView!
  
     
+    @IBOutlet weak var headViewImage: UIImage!
     
+    @IBOutlet weak var headView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        headView.image = headViewImage
 
       
     }

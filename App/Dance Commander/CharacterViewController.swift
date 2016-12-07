@@ -39,11 +39,15 @@ class CharacterViewController: UIViewController {
 
   // Custom disco transition to the Dance View Controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destinationVC = segue.destination
+        var destinationVC = segue.destination as! DanceViewController
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.custom
         customTransition = DiscoTransition()
         destinationVC.transitioningDelegate = customTransition
         customTransition.duration = 5.0
+        
+        destinationVC.headViewImage = self.characterHead.image
+        print(characterHead.image!)
+        
     }
     
     
@@ -51,9 +55,9 @@ class CharacterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        characterHead.image =
-        characterBody.image =
-        characterLegs.image = 
+        characterHead.image = #imageLiteral(resourceName: "head_0")
+        characterBody.image = #imageLiteral(resourceName: "body_0")
+        characterLegs.image = #imageLiteral(resourceName: "legs_0")
         
         discoImages = [#imageLiteral(resourceName: "disco1"), #imageLiteral(resourceName: "disco2"), #imageLiteral(resourceName: "disco3"), #imageLiteral(resourceName: "disco4"), #imageLiteral(resourceName: "disco5"), #imageLiteral(resourceName: "disco6"), #imageLiteral(resourceName: "disco7"), #imageLiteral(resourceName: "disco8"), #imageLiteral(resourceName: "disco9"), #imageLiteral(resourceName: "disco10"), #imageLiteral(resourceName: "disco11"), #imageLiteral(resourceName: "disco12"), #imageLiteral(resourceName: "disco13"), #imageLiteral(resourceName: "disco14"), #imageLiteral(resourceName: "disco15"), #imageLiteral(resourceName: "disco16"), #imageLiteral(resourceName: "disco17"), #imageLiteral(resourceName: "disco18"), #imageLiteral(resourceName: "disco19"), #imageLiteral(resourceName: "disco20"), #imageLiteral(resourceName: "disco21"), #imageLiteral(resourceName: "disco22"), #imageLiteral(resourceName: "disco23"), #imageLiteral(resourceName: "disco24"), #imageLiteral(resourceName: "disco25")]
         
