@@ -11,11 +11,11 @@
 		D4C07B481DDEB059001CEBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C07B471DDEB059001CEBA5 /* AppDelegate.swift */; };
 		D4C07B4A1DDEB059001CEBA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C07B491DDEB059001CEBA5 /* ViewController.swift */; };
 		D4C07B4D1DDEB059001CEBA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C07B4B1DDEB059001CEBA5 /* Main.storyboard */; };
-		D4C07B4F1DDEB059001CEBA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C07B4E1DDEB059001CEBA5 /* Assets.xcassets */; };
 		D4C07B521DDEB059001CEBA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C07B501DDEB059001CEBA5 /* LaunchScreen.storyboard */; };
 		D4C07B5D1DDEB059001CEBA5 /* AnimationTesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C07B5C1DDEB059001CEBA5 /* AnimationTesterTests.swift */; };
 		D4C07B681DDEB059001CEBA5 /* AnimationTesterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C07B671DDEB059001CEBA5 /* AnimationTesterUITests.swift */; };
 		D4C07B761DDEBD2C001CEBA5 /* DanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C07B751DDEBD2C001CEBA5 /* DanceViewController.swift */; };
+		D4E5F8861DF7AE1D009BBCFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4E5F8851DF7AE1D009BBCFC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 		D4C07B471DDEB059001CEBA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4C07B491DDEB059001CEBA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D4C07B4C1DDEB059001CEBA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D4C07B4E1DDEB059001CEBA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4C07B511DDEB059001CEBA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4C07B531DDEB059001CEBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4C07B581DDEB059001CEBA5 /* AnimationTesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationTesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +50,7 @@
 		D4C07B671DDEB059001CEBA5 /* AnimationTesterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTesterUITests.swift; sourceTree = "<group>"; };
 		D4C07B691DDEB059001CEBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4C07B751DDEBD2C001CEBA5 /* DanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanceViewController.swift; sourceTree = "<group>"; };
+		D4E5F8851DF7AE1D009BBCFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				D4C07B471DDEB059001CEBA5 /* AppDelegate.swift */,
+				D4E5F8851DF7AE1D009BBCFC /* Assets.xcassets */,
 				D4C07B491DDEB059001CEBA5 /* ViewController.swift */,
 				D4C07B4B1DDEB059001CEBA5 /* Main.storyboard */,
 				D4036B421DED458F00051B96 /* SnapViewController.swift */,
-				D4C07B4E1DDEB059001CEBA5 /* Assets.xcassets */,
 				D4C07B751DDEBD2C001CEBA5 /* DanceViewController.swift */,
 				D4C07B501DDEB059001CEBA5 /* LaunchScreen.storyboard */,
 				D4C07B531DDEB059001CEBA5 /* Info.plist */,
@@ -240,7 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4C07B521DDEB059001CEBA5 /* LaunchScreen.storyboard in Resources */,
-				D4C07B4F1DDEB059001CEBA5 /* Assets.xcassets in Resources */,
+				D4E5F8861DF7AE1D009BBCFC /* Assets.xcassets in Resources */,
 				D4C07B4D1DDEB059001CEBA5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
