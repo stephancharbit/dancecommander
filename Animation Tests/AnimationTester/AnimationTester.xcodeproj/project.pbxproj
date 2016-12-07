@@ -199,7 +199,7 @@
 				TargetAttributes = {
 					D4C07B431DDEB059001CEBA5 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 9T56DR2M2N;
+						DevelopmentTeam = JGX23C4G8F;
 						ProvisioningStyle = Automatic;
 					};
 					D4C07B571DDEB059001CEBA5 = {
@@ -421,8 +421,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9T56DR2M2N;
+				DEVELOPMENT_TEAM = JGX23C4G8F;
 				INFOPLIST_FILE = AnimationTester/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Stephan.AnimationTester2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -434,8 +435,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9T56DR2M2N;
+				DEVELOPMENT_TEAM = JGX23C4G8F;
 				INFOPLIST_FILE = AnimationTester/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Stephan.AnimationTester2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
