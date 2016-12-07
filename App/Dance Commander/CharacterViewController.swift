@@ -28,6 +28,7 @@ class CharacterViewController: UIViewController {
     var componentHead: Bool!
     var componentBody: Bool!
     var componentLegs: Bool!
+    
 
     var customTransition: DiscoTransition!
     
@@ -49,6 +50,10 @@ class CharacterViewController: UIViewController {
  // Loading the View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        characterHead.image =
+        characterBody.image =
+        characterLegs.image = 
         
         discoImages = [#imageLiteral(resourceName: "disco1"), #imageLiteral(resourceName: "disco2"), #imageLiteral(resourceName: "disco3"), #imageLiteral(resourceName: "disco4"), #imageLiteral(resourceName: "disco5"), #imageLiteral(resourceName: "disco6"), #imageLiteral(resourceName: "disco7"), #imageLiteral(resourceName: "disco8"), #imageLiteral(resourceName: "disco9"), #imageLiteral(resourceName: "disco10"), #imageLiteral(resourceName: "disco11"), #imageLiteral(resourceName: "disco12"), #imageLiteral(resourceName: "disco13"), #imageLiteral(resourceName: "disco14"), #imageLiteral(resourceName: "disco15"), #imageLiteral(resourceName: "disco16"), #imageLiteral(resourceName: "disco17"), #imageLiteral(resourceName: "disco18"), #imageLiteral(resourceName: "disco19"), #imageLiteral(resourceName: "disco20"), #imageLiteral(resourceName: "disco21"), #imageLiteral(resourceName: "disco22"), #imageLiteral(resourceName: "disco23"), #imageLiteral(resourceName: "disco24"), #imageLiteral(resourceName: "disco25")]
         
@@ -126,12 +131,20 @@ class CharacterViewController: UIViewController {
     
     // USER CAN BUILD CHARACTER
     
-    @IBAction func didTapComponent(_ sender: UITapGestureRecognizer) {
+    @IBAction func didTapComponent(_ sender: UITapGestureRecognizer)
+    
+    
+    {
+        let imageView = sender.view as! UIImageView
         if componentHead == true {
+            characterHead.image = imageView.image
+            
         }
         else if componentBody == true {
+            characterBody.image = imageView.image
         }
         else if componentLegs == true {
+            characterLegs.image = imageView.image
         }
         
     }
