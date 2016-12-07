@@ -21,6 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dancer_share" translatesAutoresizingMaskIntoConstraints="NO" id="cNC-cb-Gad">
+                                <rect key="frame" x="67" y="129" width="240" height="408"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="dance_floor-1" translatesAutoresizingMaskIntoConstraints="NO" id="DBE-26-1VP">
                                 <rect key="frame" x="-62" y="-72" width="482" height="741"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -64,6 +68,15 @@
                                 <rect key="frame" x="66" y="159" width="229" height="449"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trousers" translatesAutoresizingMaskIntoConstraints="NO" id="pzz-sA-H0L" customClass="d">
+                                        <rect key="frame" x="20" y="206" width="209" height="183"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Nt7-EV-4tU" appends="YES" id="sUh-W1-rF5"/>
+                                            <outletCollection property="gestureRecognizers" destination="Uxb-L1-NEU" appends="YES" id="end-fS-9Tc"/>
+                                        </connections>
+                                    </imageView>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="body" translatesAutoresizingMaskIntoConstraints="NO" id="gW8-xO-JrF" customClass="d">
                                         <rect key="frame" x="8" y="62" width="232" height="202"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,18 +93,20 @@
                                             <outletCollection property="gestureRecognizers" destination="5b3-35-DXD" appends="YES" id="J2a-sV-llT"/>
                                         </connections>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trousers" translatesAutoresizingMaskIntoConstraints="NO" id="pzz-sA-H0L" customClass="d">
-                                        <rect key="frame" x="20" y="206" width="209" height="183"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="Nt7-EV-4tU" appends="YES" id="sUh-W1-rF5"/>
-                                            <outletCollection property="gestureRecognizers" destination="Uxb-L1-NEU" appends="YES" id="end-fS-9Tc"/>
-                                        </connections>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJG-yN-HJ6">
+                                <rect key="frame" x="302" y="20" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xeC-aB-ATE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -102,10 +117,12 @@
                     <connections>
                         <outlet property="bodyView" destination="gW8-xO-JrF" id="O4F-pJ-gTa"/>
                         <outlet property="dancer" destination="9fP-QB-i7h" id="0os-Cc-lt5"/>
+                        <outlet property="dancerShare" destination="cNC-cb-Gad" id="nR6-uL-vTy"/>
                         <outlet property="headView" destination="Dth-sg-NU1" id="Wa7-9s-6m0"/>
                         <outlet property="legSwipeGR" destination="Uxb-L1-NEU" id="HWm-uw-evQ"/>
                         <outlet property="legTapGR" destination="Nt7-EV-4tU" id="1yu-s7-cMD"/>
                         <outlet property="legView" destination="pzz-sA-H0L" id="TaW-h1-ayQ"/>
+                        <outlet property="shareButton" destination="QJG-yN-HJ6" id="5Hi-Mq-etE"/>
                         <outlet property="slider" destination="G1y-Yo-rbO" id="8Ce-GE-AZI"/>
                     </connections>
                 </viewController>
@@ -143,12 +160,31 @@
             </objects>
             <point key="canvasLocation" x="-114.40000000000001" y="68.815592203898049"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="jbB-sa-R0o">
+            <objects>
+                <viewController id="VxO-g1-IHX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sGc-vz-5w1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ycn-gR-91P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lUv-tp-ryg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlP-sY-NW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="69"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Stop Black" width="127" height="127"/>
         <image name="Stop Red" width="127" height="127"/>
         <image name="body" width="348" height="300"/>
         <image name="dance_floor-1" width="369" height="526"/>
+        <image name="dancer_share" width="486" height="766"/>
         <image name="head_1" width="230" height="273"/>
         <image name="trousers" width="275" height="319"/>
     </resources>

@@ -12,14 +12,13 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var slider: UISlider!
     @IBOutlet var bodyView: UIImageView!
     @IBOutlet var headView: UIImageView!
-    @IBOutlet var startButton: UIButton!
-    @IBOutlet var stopButton: UIButton!
     @IBOutlet var dancer: UIView!
     @IBOutlet var legView: UIImageView!
     @IBOutlet var legTapGR: UITapGestureRecognizer!
     @IBOutlet var legSwipeGR: UISwipeGestureRecognizer!
     
-    
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var dancerShare: UIImageView!
     
     var tempo = 0.55
     var startingY = 300
@@ -32,6 +31,8 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
     var isSpinning:Bool!
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         // shake()
         // Do any additional setup after loading the view.
@@ -79,9 +80,21 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
+    /////////////////////////////////////////////
+    // SHARE BUTTON /////////////////////////////
     
-//////////////////////////////////////////////////////////////////////////////////
-// TEMPO SLIDER //////////////////////////////////////////////////////////////////
+    @IBAction func shareButton(_ sender: Any) {
+        displayShareSheet(shareContent: dancerShare.image!)
+    }
+    
+    func displayShareSheet(shareContent:UIImage) {
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as! UIImage], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: {})
+    }
+    
+    
+/////////////////////////////////////////////
+// TEMPO SLIDER /////////////////////////////
     
     @IBAction func didSlide(_ sender: Any) {
         tempo = 1.1-(Double(Float(slider.value)))
