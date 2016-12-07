@@ -12,9 +12,22 @@ class CharacterViewController: UIViewController {
     
     @IBOutlet weak var characterContainerView: UIImageView!
     
+    
+    
     @IBOutlet weak var componentImage1: UIImageView!
     @IBOutlet weak var componentImage2: UIImageView!
     @IBOutlet weak var componentImage3: UIImageView!
+    @IBOutlet weak var componentImage4: UIImageView!
+    @IBOutlet weak var componentImage5: UIImageView!
+    @IBOutlet weak var componentImage6: UIImageView!
+    
+    @IBOutlet weak var characterHead: UIImageView!
+    @IBOutlet weak var characterBody: UIImageView!
+    @IBOutlet weak var characterLegs: UIImageView!
+   
+    var componentHead: Bool!
+    var componentBody: Bool!
+    var componentLegs: Bool!
 
     var customTransition: DiscoTransition!
     
@@ -49,8 +62,86 @@ class CharacterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+     // COMPONENT SIDEBAR TOUCH INDICATORS
+
+    @IBAction func didTapHeadIndicator(_ sender: UIButton) {
+        componentHead = true
+        componentBody = false
+        componentLegs = false
+        
+        componentImage1.image = #imageLiteral(resourceName: "head_1")
+        componentImage1.contentMode = .scaleAspectFit
+        componentImage2.image = #imageLiteral(resourceName: "head_2")
+        componentImage2.contentMode = .scaleAspectFit
+        componentImage3.image = #imageLiteral(resourceName: "head_3")
+        componentImage3.contentMode = .scaleAspectFit
+        componentImage4.image = #imageLiteral(resourceName: "head_4")
+        componentImage4.contentMode = .scaleAspectFit
+        componentImage5.image = #imageLiteral(resourceName: "head_5")
+        componentImage5.contentMode = .scaleAspectFit
+        componentImage6.image = #imageLiteral(resourceName: "head_6")
+        componentImage6.contentMode = .scaleAspectFit
+    }
     
     
+    @IBAction func didTapBodyIndicator(_ sender: UIButton) {
+        componentHead = false
+        componentBody = true
+        componentLegs = false
+        
+        componentImage1.image = #imageLiteral(resourceName: "body_1")
+        componentImage1.contentMode = .scaleAspectFit
+        componentImage2.image = #imageLiteral(resourceName: "body_2")
+        componentImage2.contentMode = .scaleAspectFit
+        componentImage3.image = #imageLiteral(resourceName: "body_3")
+        componentImage3.contentMode = .scaleAspectFit
+        componentImage4.image = #imageLiteral(resourceName: "body_4")
+        componentImage4.contentMode = .scaleAspectFit
+        componentImage5.image = #imageLiteral(resourceName: "body_5")
+        componentImage5.contentMode = .scaleAspectFit
+        componentImage6.image = #imageLiteral(resourceName: "body_6")
+        componentImage6.contentMode = .scaleAspectFit
+    }
+    
+    
+    @IBAction func didTapLegsIndicator(_ sender: UIButton) {
+        componentHead = false
+        componentBody = false
+        componentLegs = true
+        
+        componentImage1.image = #imageLiteral(resourceName: "legs_1")
+        componentImage1.contentMode = .scaleAspectFit
+        componentImage2.image = #imageLiteral(resourceName: "legs_2")
+        componentImage2.contentMode = .scaleAspectFit
+        componentImage3.image = #imageLiteral(resourceName: "legs_3")
+        componentImage3.contentMode = .scaleAspectFit
+        componentImage4.image = #imageLiteral(resourceName: "legs_4")
+        componentImage4.contentMode = .scaleAspectFit
+        componentImage5.image = #imageLiteral(resourceName: "legs_5")
+        componentImage5.contentMode = .scaleAspectFit
+        componentImage6.image = #imageLiteral(resourceName: "legs_6")
+        componentImage6.contentMode = .scaleAspectFit
+    }
+    
+    
+    // USER CAN BUILD CHARACTER
+    
+    @IBAction func didTapComponent(_ sender: UITapGestureRecognizer) {
+        if componentHead == true {
+        }
+        else if componentBody == true {
+        }
+        else if componentLegs == true {
+        }
+        
+    }
+    
+    
+    
+    
+    
+  /* NOT USED :: USER CAN SELECT GENDER ICON TO CHANGE BODY
+     
     // SELECT MALE OR FEMALE BODY
     @IBAction func didTapMale(_ sender: UIButton) {
         sender.isSelected = true
@@ -59,26 +150,16 @@ class CharacterViewController: UIViewController {
         
     }
     
-    
     @IBAction func didTapFemale(_ sender: UIButton) {
         sender.isSelected = true
         characterContainerView.contentMode = .scaleAspectFit
         characterContainerView.image = #imageLiteral(resourceName: "woman icon")
     }
+ */
     
-    // COMPONENT SIDEBAR TOUCH INDICATORS
+   
     
-    @IBAction func didTapHairButton(_ sender: UIButton) {
-        componentImage1.backgroundColor = UIColor.black
-        componentImage2.backgroundColor = UIColor.darkGray
-        componentImage3.backgroundColor = UIColor.lightGray
-    }
-    
-    @IBAction func didTapEyeButton(_ sender: UIButton) {
-        componentImage1.backgroundColor = UIColor.red
-        componentImage2.backgroundColor = UIColor.orange
-        componentImage3.backgroundColor = UIColor.yellow
-    }
+  
     
     
 
