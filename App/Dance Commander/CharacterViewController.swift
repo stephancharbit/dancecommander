@@ -43,7 +43,7 @@ class CharacterViewController: UIViewController {
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.custom
         customTransition = DiscoTransition()
         destinationVC.transitioningDelegate = customTransition
-        customTransition.duration = 5.0
+        customTransition.duration = 3.0
         
         destinationVC.headViewImage = self.characterHead.image
         destinationVC.bodyViewImage = self.characterBody.image

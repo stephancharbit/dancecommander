@@ -14,6 +14,11 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var headView: UIImageView!
     @IBOutlet var dancer: UIView!
     @IBOutlet var legView: UIImageView!
+    
+    
+    
+    
+    
 
     
     //Images
@@ -34,6 +39,9 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         headView.image = headViewImage
         super.viewDidLoad()
+        
+        
+        
         // shake()
         // Do any additional setup after loading the view.
         print(slider.value)
@@ -71,8 +79,7 @@ class DanceViewController: UIViewController, UIGestureRecognizerDelegate {
         swipeUp.direction = UISwipeGestureRecognizerDirection.up
         self.view.addGestureRecognizer(swipeUp)
     }
-    
-    override func didReceiveMemoryWarning() {
+       override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

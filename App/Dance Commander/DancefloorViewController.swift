@@ -16,6 +16,44 @@ class DancefloorViewController: UIViewController {
     @IBOutlet var legView: UIImageView!
     
     
+    @IBOutlet weak var loadingView: UIView!
+    
+    @IBOutlet weak var loadingImage: UIImageView!
+    
+    //Loading Images
+    let loadingImage1 = #imageLiteral(resourceName: "disco1")
+    let loadingImage2 = #imageLiteral(resourceName: "disco2")
+    let loadingImage3 = #imageLiteral(resourceName: "disco3")
+    let loadingImage4 = #imageLiteral(resourceName: "disco4")
+    let loadingImage5 = #imageLiteral(resourceName: "disco5")
+    let loadingImage6 = #imageLiteral(resourceName: "disco6")
+    let loadingImage7 = #imageLiteral(resourceName: "disco7")
+    let loadingImage8 = #imageLiteral(resourceName: "disco8")
+    let loadingImage9 = #imageLiteral(resourceName: "disco9")
+    let loadingImage10 = #imageLiteral(resourceName: "disco10")
+    let loadingImage11 = #imageLiteral(resourceName: "disco11")
+    let loadingImage12 = #imageLiteral(resourceName: "disco12")
+    let loadingImage13 = #imageLiteral(resourceName: "disco13")
+    let loadingImage14 = #imageLiteral(resourceName: "disco14")
+    let loadingImage15 = #imageLiteral(resourceName: "disco15")
+    let loadingImage16 = #imageLiteral(resourceName: "disco16")
+    let loadingImage17 = #imageLiteral(resourceName: "disco17")
+    let loadingImage18 = #imageLiteral(resourceName: "disco18")
+    let loadingImage19 = #imageLiteral(resourceName: "disco19")
+    let loadingImage20 = #imageLiteral(resourceName: "disco20")
+    let loadingImage21 = #imageLiteral(resourceName: "disco21")
+    let loadingImage22 = #imageLiteral(resourceName: "disco22")
+    let loadingImage23 = #imageLiteral(resourceName: "disco23")
+    let loadingImage24 = #imageLiteral(resourceName: "disco24")
+    let loadingImage25 = #imageLiteral(resourceName: "disco25")
+    
+    var loadingImages: [UIImage]!
+    var animatedImage: UIImage!
+
+    
+
+    
+
     
     //Images
     var headViewImage: UIImage!
@@ -35,6 +73,14 @@ class DancefloorViewController: UIViewController {
     @IBOutlet weak var tinyDancer: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Loading Disco Ball
+        loadingImages = [loadingImage1, loadingImage2, loadingImage3, loadingImage4, loadingImage5, loadingImage6, loadingImage7, loadingImage8, loadingImage9, loadingImage10, loadingImage11, loadingImage12, loadingImage13, loadingImage14, loadingImage15, loadingImage16, loadingImage17, loadingImage18, loadingImage19, loadingImage20, loadingImage21, loadingImage22, loadingImage23, loadingImage24, loadingImage25]
+        
+        animatedImage = UIImage.animatedImage(with: loadingImages, duration: 2.0)
+        
+        
+        
         // Do any additional setup after loading the view.
         startingY = Int(bodyView.center.y)
         startingRotation = 0
@@ -71,6 +117,21 @@ class DancefloorViewController: UIViewController {
         swipeUp.direction = UISwipeGestureRecognizerDirection.up
         self.view.addGestureRecognizer(swipeUp)
     }
+    
+   
+     override func viewWillAppear(_ animated: Bool) {
+    loadingView.backgroundColor = UIColor.black
+     loadingImage!.image = animatedImage
+    loadingImage!.contentMode = .scaleAspectFit
+    loadingImage!.center.y = 300
+     }
+    
+
+    override func viewDidAppear(_ animated: Bool) {
+        loadingView.isHidden = true
+        loadingImage.isHidden = true
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
