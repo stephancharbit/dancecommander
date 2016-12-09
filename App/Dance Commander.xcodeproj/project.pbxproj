@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360D59C81DFA364C001C1904 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D59C71DFA364C001C1904 /* HelpViewController.swift */; };
 		8AC036EA1DDBC7820002D3EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC036E91DDBC7820002D3EE /* AppDelegate.swift */; };
 		8AC036EF1DDBC7820002D3EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC036ED1DDBC7820002D3EE /* Main.storyboard */; };
 		8AC036F11DDBC7820002D3EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AC036F01DDBC7820002D3EE /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		360D59C71DFA364C001C1904 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		8AC036E61DDBC7820002D3EE /* Dance Commander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dance Commander.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC036E91DDBC7820002D3EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AC036EE1DDBC7820002D3EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		8AC036DD1DDBC7810002D3EE = {
 			isa = PBXGroup;
 			children = (
+				360D59C71DFA364C001C1904 /* HelpViewController.swift */,
 				8AC036E81DDBC7820002D3EE /* Dance Commander */,
 				8AC036FD1DDBC7820002D3EE /* Dance CommanderTests */,
 				8AC037081DDBC7820002D3EE /* Dance CommanderUITests */,
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				360D59C81DFA364C001C1904 /* HelpViewController.swift in Sources */,
 				8AC037181DDBCD090002D3EE /* CharacterViewController.swift in Sources */,
 				FF1A422C1DF7D2510011FB86 /* DancefloorViewController.swift in Sources */,
 				FFFED1A51DF1253900A56410 /* BaseTransition.swift in Sources */,
