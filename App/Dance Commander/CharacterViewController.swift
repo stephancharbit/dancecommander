@@ -43,7 +43,7 @@ class CharacterViewController: UIViewController {
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.custom
         customTransition = DiscoTransition()
         destinationVC.transitioningDelegate = customTransition
-        customTransition.duration = 5.0
+        customTransition.duration = 2.0
         
         destinationVC.headViewImage = self.characterHead.image
         destinationVC.bodyViewImage = self.characterBody.image
@@ -62,7 +62,7 @@ class CharacterViewController: UIViewController {
         
         discoImages = [#imageLiteral(resourceName: "disco1"), #imageLiteral(resourceName: "disco2"), #imageLiteral(resourceName: "disco3"), #imageLiteral(resourceName: "disco4"), #imageLiteral(resourceName: "disco5"), #imageLiteral(resourceName: "disco6"), #imageLiteral(resourceName: "disco7"), #imageLiteral(resourceName: "disco8"), #imageLiteral(resourceName: "disco9"), #imageLiteral(resourceName: "disco10"), #imageLiteral(resourceName: "disco11"), #imageLiteral(resourceName: "disco12"), #imageLiteral(resourceName: "disco13"), #imageLiteral(resourceName: "disco14"), #imageLiteral(resourceName: "disco15"), #imageLiteral(resourceName: "disco16"), #imageLiteral(resourceName: "disco17"), #imageLiteral(resourceName: "disco18"), #imageLiteral(resourceName: "disco19"), #imageLiteral(resourceName: "disco20"), #imageLiteral(resourceName: "disco21"), #imageLiteral(resourceName: "disco22"), #imageLiteral(resourceName: "disco23"), #imageLiteral(resourceName: "disco24"), #imageLiteral(resourceName: "disco25")]
         
-        animatedDiscoImage = UIImage.animatedImage(with: discoImages, duration: 3.0)
+        animatedDiscoImage = UIImage.animatedImage(with: discoImages, duration: 1.5)
         discoImageView.image = animatedDiscoImage
         
     }
@@ -85,7 +85,7 @@ class CharacterViewController: UIViewController {
         componentImage2.contentMode = .scaleAspectFit
         componentImage3.image = #imageLiteral(resourceName: "head_3")
         componentImage3.contentMode = .scaleAspectFit
-        componentImage4.image = #imageLiteral(resourceName: "head_4")
+        componentImage4.image = #imageLiteral(resourceName: "head_7")
         componentImage4.contentMode = .scaleAspectFit
         componentImage5.image = #imageLiteral(resourceName: "head_5")
         componentImage5.contentMode = .scaleAspectFit
@@ -99,7 +99,7 @@ class CharacterViewController: UIViewController {
         componentBody = true
         componentLegs = false
         
-        componentImage1.image = #imageLiteral(resourceName: "body_1")
+        componentImage1.image = #imageLiteral(resourceName: "body_7")
         componentImage1.contentMode = .scaleAspectFit
         componentImage2.image = #imageLiteral(resourceName: "body_2")
         componentImage2.contentMode = .scaleAspectFit
@@ -125,7 +125,7 @@ class CharacterViewController: UIViewController {
         componentImage2.contentMode = .scaleAspectFit
         componentImage3.image = #imageLiteral(resourceName: "legs_3")
         componentImage3.contentMode = .scaleAspectFit
-        componentImage4.image = #imageLiteral(resourceName: "legs_4")
+        componentImage4.image = #imageLiteral(resourceName: "legs_7")
         componentImage4.contentMode = .scaleAspectFit
         componentImage5.image = #imageLiteral(resourceName: "legs_5")
         componentImage5.contentMode = .scaleAspectFit
