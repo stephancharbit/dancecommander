@@ -14,7 +14,7 @@ class DancefloorViewController: UIViewController {
     @IBOutlet var headView: UIImageView!
     @IBOutlet var dancer: UIView!
     @IBOutlet var legView: UIImageView!
-    
+    @IBOutlet weak var editButton: UIButton!
     
     @IBOutlet weak var loadingView: UIView!
     
@@ -332,7 +332,7 @@ class DancefloorViewController: UIViewController {
     var snap: UISnapBehavior!
     
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
-        sender.numberOfTapsRequired = 2
+        sender.numberOfTapsRequired = 1
         var tapPoint: CGPoint = sender.location(in: view)
         tapPoint.y = dancerStartPoint.y
         if (snap != nil) {
@@ -409,5 +409,10 @@ class DancefloorViewController: UIViewController {
     @IBAction func didSwipe(_ sender: UISwipeGestureRecognizer) {
         
     }
+    
+    @IBAction func didPressEdit(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 }
